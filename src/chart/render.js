@@ -129,19 +129,31 @@ function render(config) {
     .text(d => d.person.name)
   // .on('click', onParentClick(config))
 
-  // Person's Title
+  // Person's Title => name
   nodeEnter
     .append('text')
     .attr('class', PERSON_TITLE_CLASS + ' unedited')
     .attr('x', nodeWidth / 2)
-    .attr('y', namePos.y + nodePaddingY * 2.4)
+    .attr('y', namePos.y + nodePaddingY * 2)
     .attr('dy', '0.1em')
-    .style('font-size', 12)
+    .style('font-size', 13)
     .style('cursor', 'pointer')
     .style('fill', titleColor)
     .text(d => d.person.title)
 
   const heightForTitle = 60 // getHeightForText(d.person.title)
+
+  // Person's department
+  nodeEnter
+    .append('text')
+    .attr('class', PERSON_TITLE_CLASS + ' unedited')
+    .attr('x', nodeWidth / 2)
+    .attr('y', namePos.y + nodePaddingY * 3)
+    .attr('dy', '0.1em')
+    .style('font-size', 11)
+    .style('cursor', 'pointer')
+    .style('fill', titleColor)
+    .text(d => d.person.department)
 
   // Person's Reports
   nodeEnter
